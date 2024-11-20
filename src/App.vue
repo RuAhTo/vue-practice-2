@@ -4,23 +4,24 @@
     :active-page="activePage"
     :nav-link-click="(index) => activePage = index"
     ></Navbar>
+
+    <div v-show="false">Hide this</div>
+
     <PageViewer
-    :page="pages[activePage]"
+        v-if="pages.length > 0"
+        :page="pages[activePage]"
     ></PageViewer>
-    <Auth></Auth>
 </template>
 
 <script>
 import Navbar from './components/Navbar.vue'
 import PageViewer from './components/PageViewer.vue'
-import Auth from './components/Auth.vue'
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
 
 export default{
     components: {
         Navbar,
         PageViewer,
-        Auth,
     },
     created() {
         this.getPages()

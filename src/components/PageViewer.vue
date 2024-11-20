@@ -7,6 +7,16 @@
 
 <script>
 export default {
-    props: ['page', 'activePage']
+    props: {
+        page: {
+            type: Object,
+            default(rawProps) {
+                return {
+                    pageTitle: '',
+                    content: ''
+                }
+            }
+        }
+    }
 };
 </script>
