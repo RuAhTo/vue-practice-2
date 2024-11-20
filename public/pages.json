@@ -13,6 +13,11 @@
       "link": { "text": "Contact", "url": "contact.html" },
       "pageTitle": "Contact Page",
       "content": "This is the contact content"
+    },
+    {
+      "link": { "text": "Login", "url": "login.html" },
+      "pageTitle": "Login Page",
+      "content": "This is the login content"
     }
   ]
   

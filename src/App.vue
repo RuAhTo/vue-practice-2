@@ -7,17 +7,20 @@
     <PageViewer
     :page="pages[activePage]"
     ></PageViewer>
+    <Auth></Auth>
 </template>
 
 <script>
 import Navbar from './components/Navbar.vue'
 import PageViewer from './components/PageViewer.vue'
+import Auth from './components/Auth.vue'
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
 
 export default{
     components: {
         Navbar,
-        PageViewer
+        PageViewer,
+        Auth,
     },
     created() {
         this.getPages()
@@ -37,3 +40,6 @@ export default{
     }
 }
 </script>
+
+<style>
+</style>
