@@ -1,16 +1,15 @@
 <template>
     <Navbar
-    :pages="pages"
-    :active-page="activePage"
-    :nav-link-click="(index) => activePage = index"
+        :pages="pages"
+        :active-page="activePage"
     ></Navbar>
 
     <div v-show="false">Hide this</div>
 
-    <!-- <PageViewer
+    <PageViewer
         v-if="pages.length > 0"
         :page="pages[activePage]"
-    ></PageViewer> -->
+    ></PageViewer>
 
     <create-page
         @page-created="pageCreated"
@@ -31,6 +30,10 @@ export default{
     },
     created() {
         this.getPages()
+
+        this.$bus.$on('navbarLinkActivated', (index) => {
+            this.activePage = index;
+        })
     },
     data(){
         return {
